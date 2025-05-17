@@ -37,7 +37,7 @@ This project is complemented by additional modules in separate repositories:
 - **[Forum Security](https://github.com/Pba23/forum-security)**: Advanced security features
 - **[Forum Advanced Features](https://github.com/Pba23/forum-advanced-features)**: Additional functionality
 - **[Forum Image Upload](https://github.com/Pba23/forum-image-upload)**: Image upload management
-- **[Forum Moderator](https://github.com/Pba23/forum-moderator)**: Moderation system
+- **[Forum authentification](https://github.com/Pba23/forum-authentification)**: authentification system
 
 ## Technologies Used
 
