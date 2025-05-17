@@ -1,56 +1,95 @@
-# 🗨️ FORUM
+#Forum
 
-## INTRODUCTION
+A comprehensive web forum allowing users to communicate, share, and interact through posts and comments.
 
-This project aims to create a web forum that allows users to communicate with each other, create posts, comment on posts, and interact with the content through likes and dislikes. The forum will be implemented using Go and SQLite for data storage. The project will be divided into several modules, each with specific objectives and functionalities.
+## Description
 
-## PROJECT MODULES
+This project is a web forum developed in Go that enables users to register, log in, publish messages, comment, and interact with content through likes and dislikes. The forum uses SQLite as a database and is containerized with Docker for easy deployment.
 
-1. **forum**: Implement the core functionalities of the web forum, such as user registration, login, post creation, commenting, liking/disliking, and post filtering.
-2. **authentication**: Integrate authentication means for users to register and login using Google and Github authentication tools.
-3. **forum-image-upload**: Allow registered users to create posts with images and handle image validation and storage.
-4. **security**: Enhance forum security by implementing HTTPS, Rate Limiting, and password encryption.
-5. **forum-moderation**: Implement a moderation system with user access levels and moderation functionalities.
-6. **forum-advanced-features**: Add advanced features like notifications, activity tracking, and post/comment editing/removal.
+## Features
 
-## INSTRUCTIONS
+### Core Features
+- **Authentication**
+  - User registration (email, username, password)
+  - Login/logout functionality
+  - User session management with cookies
+  
+- **Communication**
+  - Post creation (restricted to logged-in users)
+  - Adding comments to posts (restricted to logged-in users)
+  - Viewing posts and comments (open to all)
+  
+- **Categorization**
+  - Association of one or more categories to each post
+  - Filtering posts by category
+  
+- **Interactions**
+  - Like and dislike system for posts and comments
+  - Like/dislike counter visible to all users
+  
+- **Filtering**
+  - Filter by categories
+  - Filter by created posts (logged-in users only)
+  - Filter by liked posts (logged-in users only)
 
-- The project will use Go for server-side development and SQLite for data storage.
-- All frontend development should be done using pure HTML/CSS without any frontend frameworks.
-- Ensure proper error handling and HTTP status code management throughout the project.
-- Write unit tests for critical functionalities to ensure reliability.
-- Dockerize the forum application to facilitate deployment.
+### Supplementary Modules
+This project is complemented by additional modules in separate repositories:
+- **[Forum Security](https://github.com/Pba23/forum-security)**: Advanced security features
+- **[Forum Advanced Features](https://github.com/Pba23/forum-advanced-features)**: Additional functionality
+- **[Forum Image Upload](https://github.com/Pba23/forum-image-upload)**: Image upload management
+- **[Forum Moderator](https://github.com/Pba23/forum-moderator)**: Moderation system
 
-## GETTING STARTED
+## Technologies Used
 
-Follow these steps to set up and run the web forum:
+- **Backend**: Go
+- **Database**: SQLite
+- **Containerization**: Docker
+- **Frontend**: HTML, CSS, Vanilla JavaScript (no frameworks)
+- **Security**: bcrypt for password encryption, UUID for sessions
 
-1. Clone the repository:
-   ```
-   git clone <repository-url>
-   cd forum
-   ```
+## Installation and Setup
 
-2. Install dependencies:
-   ```
-   go mod tidy
-   ```
+### Prerequisites
+- Go installed on your machine
+- Docker installed on your machine
 
-3. Build the application:
-   ```
-   go build
-   ```
+### Installation
 
-4. Run the application:
-   ```
-   ./forum
-   ```
+1. Clone the repository
+```bash
+git clone https://github.com/your-username/forum.git
+cd forum
+```
 
-5. Access the forum in your web browser at `http://localhost:8080`.
+2. Build the Docker image
+```bash
+docker build -t forum .
+```
 
-## AUTHORS
+3. Launch the container
+```bash
+docker run -p 8080:8080 forum
+```
 
-- @pba
-- @papgueye
-- @lomalack
-- @serignmbaye
+4. Access the forum in your browser at: `http://localhost:8080`
+
+## Database Structure
+
+The SQLite database includes the following tables:
+- Users
+- Posts
+- Comments
+- Categories
+- Post_Categories (relationship between posts and categories)
+- Likes (likes on posts and comments)
+
+## Testing
+
+To run the unit tests:
+```bash
+go test ./...
+```
+
+## Contribution
+
+Contributions are welcome! Feel free to open an issue or submit a pull request.
