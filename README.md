@@ -91,5 +91,7 @@ go test ./...
 ```
 
 ## Contribution
-
+This project was done with :
+- [@Louis Sebastian Malack](https://github.com/Steb1)
+- [@Serigne Saliou Mbacke Mbaye](https://github.com/SSMM0498)
 Contributions are welcome! Feel free to open an issue or submit a pull request.
